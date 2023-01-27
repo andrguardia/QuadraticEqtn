@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State  var a: String = ""
-    @State  var b: String = ""
-    @State  var c: String = ""
+    @State  var aString: String = ""
+    @State  var bString: String = ""
+    @State  var cString: String = ""
+    /// Solutions using first method provided
     @State var solutionOne: Double = 0.0
     @State var solutionOneR: Double = 0.0
     @State var solutionOneIm: Double = 0.0
     @State var solutionTwoR: Double = 0.0
     @State var solutionTwoIm: Double = 0.0
+    /// Solutions using the second method provided, will be used to compute error
+    @State var solutionOnePrime: Double = 0.0
+    @State var solutionOneRPrime: Double = 0.0
+    @State var solutionOneImPrime: Double = 0.0
+    @State var solutionTwoRPrime: Double = 0.0
+    @State var solutionTwoImPrime: Double = 0.0
 
     
     var body: some View {
@@ -24,16 +31,16 @@ struct ContentView: View {
                 .font(.largeTitle)
             HStack {
                 Text("a:")
-                TextField("Enter a value for a", text: $a)
+                TextField("Enter a value for a", text: $aString)
             }
             
             HStack {
                 Text("b:")
-                TextField("Enter a value for b", text: $b)
+                TextField("Enter a value for b", text: $bString)
             }
             HStack {
                 Text("c:")
-                TextField("Enter a value for c", text: $c)
+                TextField("Enter a value for c", text: $cString)
             }
             
             Button("Compute!", action: {self.calculate()})
@@ -53,34 +60,42 @@ struct ContentView: View {
     }
     
     func calculate(){
-        let A = Double(a)!
-        let B = Double(b)!
-        let C = Double(c)!
+        var quadraticeqtn = quadraticEquation()
         
-        var det = Double(pow(B,2)) - 4.0*A*C
+        quadraticeqtn.a = Double(aString)!
+        quadraticeqtn.b = Double(bString)!
+        quadraticeqtn.c = Double(cString)!
         
-        switch det {
-        case let x where x < 0:
-            det = det*(-1.0)
-            let sqrt = det.squareRoot()
-            solutionOneR = (-1.0)*B/(2.0)*A
-            solutionTwoR = solutionOneR
-            solutionOneIm = (1.0/(2.0*A))*sqrt
-            solutionTwoIm = (-1.0)*solutionOneIm
-        case let x where x == 0:
-            solutionOneR = (-1.0)*B/(2.0)*A
-        case let x where x > 0:
-            let sqrt = det.squareRoot()
-            solutionOneR = ((-1.0)*B + sqrt)/(2*A)
-            solutionTwoR = ((-1.0)*B - sqrt)/(2*A)
-        default:
-            print("this is impossible")
-        }
+        quadraticeqtn.calculateQuadraticSolutions()
+        solutionOneR = quadraticeqtn.solOneR
+        solutionOneIm = quadraticeqtn.solOneIm
+        solutionTwoR = quadraticeqtn.solTwoR
+        solutionTwoIm = quadraticeqtn.solTwoIm
         
-        print(solutionOneR)
-        print(solutionOneIm)
-        print(solutionTwoR)
-        print(solutionTwoIm)
+//        var det = Double(pow(B,2)) - 4.0*A*C
+//
+//        switch det {
+//        case let x where x < 0:
+//            det = det*(-1.0)
+//            let sqrt = det.squareRoot()
+//            solutionOneR = (-1.0)*B/(2.0)*A
+//            solutionTwoR = solutionOneR
+//            solutionOneIm = (1.0/(2.0*A))*sqrt
+//            solutionTwoIm = (-1.0)*solutionOneIm
+//        case let x where x == 0:
+//            solutionOneR = (-1.0)*B/(2.0)*A
+//        case let x where x > 0:
+//            let sqrt = det.squareRoot()
+//            solutionOneR = ((-1.0)*B + sqrt)/(2*A)
+//            solutionTwoR = ((-1.0)*B - sqrt)/(2*A)
+//        default:
+//            print("this is impossible")
+//        }
+//
+//        print(solutionOneR)
+//        print(solutionOneIm)
+//        print(solutionTwoR)
+//        print(solutionTwoIm)
         
         }
 }

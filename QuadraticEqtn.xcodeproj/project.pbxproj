@@ -14,6 +14,9 @@
 		AB1E9953297B5DFB00CC4771 /* QuadraticEqtnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E9952297B5DFB00CC4771 /* QuadraticEqtnTests.swift */; };
 		AB1E995D297B5DFB00CC4771 /* QuadraticEqtnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E995C297B5DFB00CC4771 /* QuadraticEqtnUITests.swift */; };
 		AB1E995F297B5DFB00CC4771 /* QuadraticEqtnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E995E297B5DFB00CC4771 /* QuadraticEqtnUITestsLaunchTests.swift */; };
+		ABF80A1229847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
+		ABF80A1329847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
+		ABF80A1429847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,7 @@
 		AB1E9958297B5DFB00CC4771 /* QuadraticEqtnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuadraticEqtnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1E995C297B5DFB00CC4771 /* QuadraticEqtnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadraticEqtnUITests.swift; sourceTree = "<group>"; };
 		AB1E995E297B5DFB00CC4771 /* QuadraticEqtnUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadraticEqtnUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ABF80A1129847A2F00778B42 /* quadraticEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quadraticEquation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			children = (
 				AB1E9940297B5DFA00CC4771 /* QuadraticEqtnApp.swift */,
 				AB1E9942297B5DFA00CC4771 /* ContentView.swift */,
+				ABF80A1129847A2F00778B42 /* quadraticEquation.swift */,
 				AB1E9944297B5DFA00CC4771 /* Assets.xcassets */,
 				AB1E9946297B5DFA00CC4771 /* QuadraticEqtn.entitlements */,
 				AB1E9947297B5DFA00CC4771 /* Preview Content */,
@@ -259,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF80A1229847A2F00778B42 /* quadraticEquation.swift in Sources */,
 				AB1E9943297B5DFA00CC4771 /* ContentView.swift in Sources */,
 				AB1E9941297B5DFA00CC4771 /* QuadraticEqtnApp.swift in Sources */,
 			);
@@ -268,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF80A1329847A2F00778B42 /* quadraticEquation.swift in Sources */,
 				AB1E9953297B5DFB00CC4771 /* QuadraticEqtnTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF80A1429847A2F00778B42 /* quadraticEquation.swift in Sources */,
 				AB1E995D297B5DFB00CC4771 /* QuadraticEqtnUITests.swift in Sources */,
 				AB1E995F297B5DFB00CC4771 /* QuadraticEqtnUITestsLaunchTests.swift in Sources */,
 			);
