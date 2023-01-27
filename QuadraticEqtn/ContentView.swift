@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Numerics
+import ComplexModule
 
 struct ContentView: View {
     @State  var aString: String = ""
@@ -18,7 +20,9 @@ struct ContentView: View {
     @State var solutionTwoR: Double = 0.0
     @State var solutionTwoIm: Double = 0.0
     /// Solutions using the second method provided, will be used to compute error
-    @State var solutionOnePrime: Double = 0.0
+    @State var solOnePrime = Complex<Double>(0.0,0.0)
+    @State var solTwoPrime = Complex<Double>(0.0,0.0)
+    
     @State var solutionOneRPrime: Double = 0.0
     @State var solutionOneImPrime: Double = 0.0
     @State var solutionTwoRPrime: Double = 0.0
@@ -48,29 +52,41 @@ struct ContentView: View {
             HStack {Text("x_1:")
                 Text("\(self.solutionOneR, specifier: "%.2f") + \(self.solutionOneIm, specifier: "%.2f")i")}
             
+            HStack {Text("x_1':")
+                Text("\(self.solutionOneRPrime, specifier: "%.2f") + \(self.solutionOneImPrime, specifier: "%.2f")i")}
+            
             HStack {Text("x_2:")
                Text("\(self.solutionTwoR, specifier: "%.2f") + \(self.solutionTwoIm, specifier: "%.2f")i")}
-//            HStack {Text("x_3:")
-//                Text("Third solution goes here")}
-//            HStack {Text("x_4:")
-//                Text("Fourth solution goes here")}
+            
+            HStack {Text("x_2':")
+                Text("\(self.solutionTwoRPrime, specifier: "%.2f") + \(self.solutionTwoImPrime, specifier: "%.2f")i")}
             
         }
         .padding()
     }
     
     func calculate(){
-        var quadraticeqtn = quadraticEquation()
+        ///This function defines an object of quadratic equaions, runs both methods to calculate all four solutions.
+        ///Returns: void
+        let quadraticeqtn = quadraticEquation()
         
         quadraticeqtn.a = Double(aString)!
         quadraticeqtn.b = Double(bString)!
         quadraticeqtn.c = Double(cString)!
+        
         
         quadraticeqtn.calculateQuadraticSolutions()
         solutionOneR = quadraticeqtn.solOneR
         solutionOneIm = quadraticeqtn.solOneIm
         solutionTwoR = quadraticeqtn.solTwoR
         solutionTwoIm = quadraticeqtn.solTwoIm
+        
+        quadraticeqtn.calculateQuadraticSolutionsPrime()
+        solutionOneRPrime = quadraticeqtn.solOnePrime.real
+        solutionOneImPrime = quadraticeqtn.solOnePrime.imaginary
+        solutionTwoRPrime = quadraticeqtn.solTwoPrime.real
+        solutionTwoImPrime = quadraticeqtn.solTwoPrime.imaginary
+        
         
 //        var det = Double(pow(B,2)) - 4.0*A*C
 //

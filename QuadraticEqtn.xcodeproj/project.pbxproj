@@ -17,6 +17,9 @@
 		ABF80A1229847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
 		ABF80A1329847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
 		ABF80A1429847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
+		ABF80A172984927E00778B42 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = ABF80A162984927E00778B42 /* ComplexModule */; };
+		ABF80A192984927E00778B42 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = ABF80A182984927E00778B42 /* Numerics */; };
+		ABF80A1B2984927E00778B42 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = ABF80A1A2984927E00778B42 /* RealModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF80A192984927E00778B42 /* Numerics in Frameworks */,
+				ABF80A172984927E00778B42 /* ComplexModule in Frameworks */,
+				ABF80A1B2984927E00778B42 /* RealModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +156,11 @@
 			dependencies = (
 			);
 			name = QuadraticEqtn;
+			packageProductDependencies = (
+				ABF80A162984927E00778B42 /* ComplexModule */,
+				ABF80A182984927E00778B42 /* Numerics */,
+				ABF80A1A2984927E00778B42 /* RealModule */,
+			);
 			productName = QuadraticEqtn;
 			productReference = AB1E993D297B5DFA00CC4771 /* QuadraticEqtn.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +233,9 @@
 				Base,
 			);
 			mainGroup = AB1E9934297B5DFA00CC4771;
+			packageReferences = (
+				ABF80A152984927E00778B42 /* XCRemoteSwiftPackageReference "swift-numerics" */,
+			);
 			productRefGroup = AB1E993E297B5DFA00CC4771 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -612,6 +626,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABF80A152984927E00778B42 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABF80A162984927E00778B42 /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABF80A152984927E00778B42 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		ABF80A182984927E00778B42 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABF80A152984927E00778B42 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+		ABF80A1A2984927E00778B42 /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABF80A152984927E00778B42 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB1E9935297B5DFA00CC4771 /* Project object */;
 }
