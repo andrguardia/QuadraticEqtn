@@ -6,6 +6,9 @@
 //
 
 import XCTest
+import SwiftUI
+import Numerics
+import ComplexModule
 
 final class QuadraticEqtnTests: XCTestCase {
 
@@ -23,10 +26,17 @@ final class QuadraticEqtnTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        
-        
-        
-    }
+        //        let quadraticTest = quadraticEquation()
+        //        var n: Double = 0.0
+        //        quadraticTest.a = 1.0
+        //        quadraticTest.b = 1.0
+        //        quadraticTest.c = pow(10,-n)
+        //
+        //        quadraticTest.calculateQuadraticSolutions()
+        //        quadraticTest.calculateQuadraticSolutionsPrime()
+        //
+        //        XCTAssertEqual(quadraticTest.solOneR, quadraticTest.solOnePrime.real, accuracy: 1e-14)
+        }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

@@ -24,9 +24,17 @@ class quadraticEquation: NSObject {
     var solOnePrime = Complex<Double>(0.0,0.0)
     var solTwoPrime = Complex<Double>(0.0,0.0)
     
+    var solOneRAccuracy: Double = 0.0
+    var solOneImAccuracy: Double = 0.0
+    var solTwoRAccuracy: Double = 0.0
+    var solTwoImAccuracy: Double = 0.0
     
-//    let comp: Complex<Double> = 2 + .i
-//    print(comp.imaginary)
+    func calculateAcurracy(){
+        solOneRAccuracy = self.solOneR - self.solOnePrime.real
+        solOneImAccuracy = self.solOneIm - self.solOnePrime.imaginary
+        solTwoRAccuracy = self.solTwoR - self.solTwoPrime.real
+        solTwoImAccuracy = self.solTwoIm - self.solTwoPrime.imaginary
+    }
     
     
     func calculateDeterminant()->Double{
@@ -95,6 +103,9 @@ class quadraticEquation: NSObject {
             print("this is impossible")
         }
     }
+    
+    
+    
     
     
     

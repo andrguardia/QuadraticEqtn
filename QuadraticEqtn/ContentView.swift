@@ -27,6 +27,11 @@ struct ContentView: View {
     @State var solutionOneImPrime: Double = 0.0
     @State var solutionTwoRPrime: Double = 0.0
     @State var solutionTwoImPrime: Double = 0.0
+    
+    @State var solutionOneRealAcurracy: Double = 0.0
+    @State var solutionOneImaginaryAcurracy: Double = 0.0
+    @State var solutionTwoRealAcurracy: Double = 0.0
+    @State var solutionTwoImaginaryAcurracy: Double = 0.0
 
     
     var body: some View {
@@ -50,16 +55,44 @@ struct ContentView: View {
             Button("Compute!", action: {self.calculate()})
             
             HStack {Text("x_1:")
-                Text("\(self.solutionOneR, specifier: "%.2f") + \(self.solutionOneIm, specifier: "%.2f")i")}
+                Text("\(self.solutionOneR, specifier: "%.2f") + \(self.solutionOneIm, specifier: "%.2f")i")
+            }
             
             HStack {Text("x_1':")
-                Text("\(self.solutionOneRPrime, specifier: "%.2f") + \(self.solutionOneImPrime, specifier: "%.2f")i")}
+                Text("\(self.solutionOneRPrime, specifier: "%.2f") + \(self.solutionOneImPrime, specifier: "%.2f")i")
+            }
             
             HStack {Text("x_2:")
-               Text("\(self.solutionTwoR, specifier: "%.2f") + \(self.solutionTwoIm, specifier: "%.2f")i")}
+                Text("\(self.solutionTwoR, specifier: "%.2f") + \(self.solutionTwoIm, specifier: "%.2f")i")
+            }
             
             HStack {Text("x_2':")
-                Text("\(self.solutionTwoRPrime, specifier: "%.2f") + \(self.solutionTwoImPrime, specifier: "%.2f")i")}
+                Text("\(self.solutionTwoRPrime, specifier: "%.2f") + \(self.solutionTwoImPrime, specifier: "%.2f")i")
+            }
+            
+        }
+        
+        VStack{
+            
+            HStack {Text("x_1 Real Error:")
+                Text("\(self.solutionOneRealAcurracy, specifier: "%.30f")")
+                
+            }
+            
+            HStack {Text("x_1 Imaginary Error:")
+                Text("\(self.solutionOneImaginaryAcurracy, specifier: "%.30f")")
+                
+            }
+            
+            HStack {Text("x_2 Real Error:")
+                Text("\(self.solutionTwoRealAcurracy, specifier: "%.30f")")
+                
+            }
+            
+            HStack {Text("x_2 Imaginary Error:")
+                Text("\(self.solutionTwoImaginaryAcurracy, specifier: "%.30f")")
+                
+            }
             
         }
         .padding()
@@ -87,32 +120,11 @@ struct ContentView: View {
         solutionTwoRPrime = quadraticeqtn.solTwoPrime.real
         solutionTwoImPrime = quadraticeqtn.solTwoPrime.imaginary
         
-        
-//        var det = Double(pow(B,2)) - 4.0*A*C
-//
-//        switch det {
-//        case let x where x < 0:
-//            det = det*(-1.0)
-//            let sqrt = det.squareRoot()
-//            solutionOneR = (-1.0)*B/(2.0)*A
-//            solutionTwoR = solutionOneR
-//            solutionOneIm = (1.0/(2.0*A))*sqrt
-//            solutionTwoIm = (-1.0)*solutionOneIm
-//        case let x where x == 0:
-//            solutionOneR = (-1.0)*B/(2.0)*A
-//        case let x where x > 0:
-//            let sqrt = det.squareRoot()
-//            solutionOneR = ((-1.0)*B + sqrt)/(2*A)
-//            solutionTwoR = ((-1.0)*B - sqrt)/(2*A)
-//        default:
-//            print("this is impossible")
-//        }
-//
-//        print(solutionOneR)
-//        print(solutionOneIm)
-//        print(solutionTwoR)
-//        print(solutionTwoIm)
-        
+        quadraticeqtn.calculateAcurracy()
+        solutionOneRealAcurracy = quadraticeqtn.solOneRAccuracy
+        solutionOneImaginaryAcurracy = quadraticeqtn.solOneImAccuracy
+        solutionTwoRealAcurracy = quadraticeqtn.solTwoRAccuracy
+        solutionTwoImaginaryAcurracy = quadraticeqtn.solTwoImAccuracy
         }
 }
 
