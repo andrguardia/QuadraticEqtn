@@ -12,8 +12,7 @@
 		AB1E9945297B5DFA00CC4771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1E9944297B5DFA00CC4771 /* Assets.xcassets */; };
 		AB1E9949297B5DFA00CC4771 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1E9948297B5DFA00CC4771 /* Preview Assets.xcassets */; };
 		AB1E9953297B5DFB00CC4771 /* QuadraticEqtnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E9952297B5DFB00CC4771 /* QuadraticEqtnTests.swift */; };
-		AB1E995D297B5DFB00CC4771 /* QuadraticEqtnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E995C297B5DFB00CC4771 /* QuadraticEqtnUITests.swift */; };
-		AB1E995F297B5DFB00CC4771 /* QuadraticEqtnUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1E995E297B5DFB00CC4771 /* QuadraticEqtnUITestsLaunchTests.swift */; };
+		AB98362F29AD788F00993E49 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = AB98362E29AD788F00993E49 /* Numerics */; };
 		ABF80A1229847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
 		ABF80A1329847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
 		ABF80A1429847A2F00778B42 /* quadraticEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80A1129847A2F00778B42 /* quadraticEquation.swift */; };
@@ -69,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB98362F29AD788F00993E49 /* Numerics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +89,7 @@
 				AB1E9951297B5DFB00CC4771 /* QuadraticEqtnTests */,
 				AB1E995B297B5DFB00CC4771 /* QuadraticEqtnUITests */,
 				AB1E993E297B5DFA00CC4771 /* Products */,
+				AB98362D29AD788F00993E49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +141,13 @@
 			path = QuadraticEqtnUITests;
 			sourceTree = "<group>";
 		};
+		AB98362D29AD788F00993E49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +187,9 @@
 				AB1E9950297B5DFB00CC4771 /* PBXTargetDependency */,
 			);
 			name = QuadraticEqtnTests;
+			packageProductDependencies = (
+				AB98362E29AD788F00993E49 /* Numerics */,
+			);
 			productName = QuadraticEqtnTests;
 			productReference = AB1E994E297B5DFB00CC4771 /* QuadraticEqtnTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -298,8 +309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABF80A1429847A2F00778B42 /* quadraticEquation.swift in Sources */,
-				AB1E995D297B5DFB00CC4771 /* QuadraticEqtnUITests.swift in Sources */,
-				AB1E995F297B5DFB00CC4771 /* QuadraticEqtnUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +648,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB98362E29AD788F00993E49 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABF80A152984927E00778B42 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
 		ABF80A162984927E00778B42 /* ComplexModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ABF80A152984927E00778B42 /* XCRemoteSwiftPackageReference "swift-numerics" */;
